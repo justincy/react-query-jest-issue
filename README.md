@@ -2,6 +2,8 @@
 
 Debugging an issue with react-query and jest.
 
+## Problem
+
 Install this repo and run the test. You will see the following error:
 
 ```
@@ -25,3 +27,7 @@ But it makes jest think that it can resolve modules locally from inside of
 any module. So when inside `QueryClientProvider`, it sees an import for
 `react` and thinks it should resolve to the current directory because it's
 `react-query/lib/react`.
+
+## Solution
+
+Instead of `moduleDirectories`, use `moduleNameMapper` with the following entry: `"^src/(.*)": "<rootDir>/src/$1"`.

@@ -31,3 +31,5 @@ any module. So when inside `QueryClientProvider`, it sees an import for
 ## Solution
 
 Instead of `moduleDirectories`, use `moduleNameMapper` with the following entry: `"^src/(.*)": "<rootDir>/src/$1"`.
+
+Thanks to https://github.com/kulshekhar/ts-jest/issues/331#issuecomment-337822749
